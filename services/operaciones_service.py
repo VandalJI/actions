@@ -16,4 +16,9 @@ def sumar(a: float, b: float) -> float:
     """
     return a + b
 
+def multiplicar(a: float, b:float) -> float:
+	"""
+	Multiplicar dos numeros
+	"""
+	return a * b
 
