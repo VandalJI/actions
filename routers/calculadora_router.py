@@ -4,7 +4,7 @@ Router de operaciones matemáticas para la API de calculadora.
 
 from fastapi import APIRouter
 from models.request_models import SumaRequest
-from services.operaciones_service import sumar, multiplicacion
+from services.operaciones_service import sumar, multiplicar, dividir
 
 router = APIRouter()
 
@@ -30,3 +30,14 @@ def ruta_multiplicaicon(datos: MultiplicacionRequest):
 	"""
 	resultado = multiplicar(datos.a, datos.b)
 	return {"resultado": resultado}
+
+@router.post("/division")
+def ruta_division(datos: DivisionRequest):
+	"""
+	Calcula la division de dos numeros, pero uno no puede ser 0
+	Raises: HTTPException: Si el divisor es 0
+	"""
+	
+	resultado = dividir(datos.a, datos.b)
+	return {"resultado": resultado}
+
