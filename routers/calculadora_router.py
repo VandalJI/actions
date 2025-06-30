@@ -3,7 +3,7 @@ Router de operaciones matemáticas para la API de calculadora.
 """
 
 from fastapi import APIRouter
-from models.request_models import SumaRequest
+from models.request_models import SumaRequest, MultiplicacionRequest
 from services.operaciones_service import sumar, multiplicar, dividir
 
 router = APIRouter()
